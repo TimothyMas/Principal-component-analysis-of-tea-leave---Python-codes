@@ -1,68 +1,83 @@
 # Principal Component Analysis of Tea Leaves Chemical Ingredients (without data)
 
-This repository contains Python scripts for the statistical analysis of tea leaf chemical ingredients. The analysis focuses on identifying the type of tea product based on its chemical composition using techniques such as outlier detection, principal component analysis (PCA), and statistical tests.
+This repository contains Python scripts and resources for analyzing chemical components in tea leaves, using various statistical and data analysis techniques. The analysis aims to identify the type of tea based on chemical ingredient profiles using PCA and related statistical methods.
 
-## Description
+## Repository Overview
 
-The main objective is to analyze the chemical compounds in tea leaves to classify and differentiate tea types. The repository includes scripts for preprocessing data, performing PCA, removing outliers, and conducting statistical tests.
+- **`p_IQR.py`**  
+  Contains code for **outlier detection** using the IQR (Interquartile Range) method and related preprocessing steps to clean the data.
 
-### Key Features
+- **`p_intensity_for_all_matrix.py`**  
+  Includes scripts for visualizing the **signal intensity distribution** and generating summary statistics such as median values and quantile ranges for chemical components.
 
-- **Outlier Detection**: IQR-based outlier removal to ensure clean data.
-- **PCA Analysis**: Identifies patterns and variations in chemical compound intensities.
-- **Visualization**: Provides visual insights using bar plots, box plots, histograms, and PCA scatter plots.
-- **Statistical Analysis**: Includes ANOVA, Kruskal-Wallis tests, and pairwise comparisons for robust data interpretation.
+- **`p_std_matrix.py`**  
+  This file computes **standardized matrices** for PCA and other advanced statistical analyses. It includes scaling and transformation functions.
 
----
+## Key Features
 
-## Files and Scripts
+1. **Outlier Removal**:  
+   Uses the IQR method to filter out extreme values, ensuring cleaner and more reliable data for further analysis.
 
-### 1. `p_IQR.py`
-- Performs IQR-based outlier detection.
-- Cleans the dataset by removing outliers from tea chemical data.
-- Saves filtered data and removed outliers as separate CSV files.
+2. **Signal Intensity Analysis**:  
+   Provides visualizations and summary statistics of signal intensities across different compounds in tea.
 
-### 2. `p_intensity_for_all_matrix.py`
-- Computes the signal intensity for all compounds across samples.
-- Includes median and IQR calculations.
-- Produces visualizations such as bar charts and box plots for compound intensities.
+3. **Principal Component Analysis (PCA)**:  
+   Reduces dimensionality of the chemical ingredient dataset while highlighting key differences among tea types.
 
-### 3. `p_std_matrix.py`
-- Prepares a standardized data matrix for PCA analysis.
-- Conducts log transformations and scaling for PCA.
-- Saves the PCA scatter plot and provides insights into tea-type clustering.
+4. **Tea Type Classification**:  
+   Maps chemical ingredient profiles to specific tea types (e.g., Black Tea, Green Tea, Pu-erh).
 
----
+5. **Statistical Tests**:  
+   Implements ANOVA, Kruskal-Wallis, and pairwise t-tests to assess significant differences among tea types.
 
-## Statistical Analysis Methods
+6. **Log Transformation and Correlation Analysis**:  
+   Applies log transformation to normalize data and computes correlation matrices for compounds.
 
-### 1. **ANOVA**
-- Determines the statistical significance of differences between tea types for each compound.
-- Outputs F-statistics and p-values.
+## Data Analysis Workflow
 
-### 2. **Kruskal-Wallis H-Test**
-- Non-parametric test for comparing groups with non-normal distributions.
-- Suitable for the tea compound dataset.
+1. **Preprocessing**:
+   - Load and clean raw data.
+   - Map EIC values to compounds and sample numbers to tea types.
 
-### 3. **Pairwise T-Tests and Mann-Whitney U Test**
-- Pairwise comparisons between tea types to identify significant differences in compound intensities.
+2. **Outlier Detection**:
+   - Identify and remove outliers using the IQR method.
+   - Save outlier statistics for reference.
 
----
+3. **Exploratory Analysis**:
+   - Visualize data distributions using box plots, bar plots, and histograms.
+   - Compute summary statistics (median, Q1, Q3, etc.).
 
-## Visualizations
+4. **Dimensionality Reduction**:
+   - Perform PCA to reduce the dataset to key components.
+   - Visualize PCA results for better understanding of tea type clustering.
 
-The repository generates multiple visualizations for a better understanding of the data:
-- **Bar Charts**: Illustrate median intensities with IQR for different tea types.
-- **Box Plots**: Show the spread and distribution of compound intensities by tea type.
-- **Histograms**: Depict the distribution of raw and log-transformed data.
-- **PCA Scatter Plot**: Displays clustering of tea types based on compound intensities.
-- **Correlation Heatmap**: Highlights relationships between different compounds.
+5. **Statistical Analysis**:
+   - Conduct ANOVA and non-parametric tests to validate findings.
+   - Generate correlation heatmaps to understand relationships among compounds.
 
----
+## Visualization Examples
 
-## Usage
+- **Bar Plots**:
+  Median signal intensity for each compound grouped by tea type.
+- **Box Plots**:
+  Spread of signal intensities across tea types and compounds.
+- **PCA Scatter Plots**:
+  Visualization of tea type clustering in reduced dimensions.
+- **Correlation Heatmaps**:
+  Highlight relationships between compounds.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/tea-leaves-analysis.git
-   cd tea-leaves-analysis
+## Requirements
+
+- Python 3.8+
+- Required libraries:
+  - `pandas`
+  - `numpy`
+  - `matplotlib`
+  - `seaborn`
+  - `scipy`
+  - `sklearn`
+
+Install the dependencies using:
+
+```bash
+pip install -r requirements.txt
