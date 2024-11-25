@@ -1,10 +1,10 @@
-# Principal Component Analysis of Tea Leaves Chemical Ingredients
+# Principal Component Analysis of Tea Leaves Chemical Ingredients (without data)
 
 This repository contains Python scripts for the statistical analysis of tea leaf chemical ingredients. The analysis focuses on identifying the type of tea product based on its chemical composition using techniques such as outlier detection, principal component analysis (PCA), and statistical tests.
 
 ## Description
 
-The main objective is to analyze the chemical compounds in tea leaves to classify and differentiate tea types such as Black Tea (Keemun, Yunnan), Green Tea, and Pu-erh. The repository includes scripts for preprocessing data, performing PCA, removing outliers, and conducting statistical tests.
+The main objective is to analyze the chemical compounds in tea leaves to classify and differentiate tea types. The repository includes scripts for preprocessing data, performing PCA, removing outliers, and conducting statistical tests.
 
 ### Key Features
 
@@ -30,7 +30,7 @@ The main objective is to analyze the chemical compounds in tea leaves to classif
 ### 3. `p_std_matrix.py`
 - Prepares a standardized data matrix for PCA analysis.
 - Conducts log transformations and scaling for PCA.
-- Saves the PCA scatter plot and provides insights into tea type clustering.
+- Saves the PCA scatter plot and provides insights into tea-type clustering.
 
 ---
 
@@ -51,7 +51,7 @@ The main objective is to analyze the chemical compounds in tea leaves to classif
 
 ## Visualizations
 
-The repository generates multiple visualizations for better understanding of the data:
+The repository generates multiple visualizations for a better understanding of the data:
 - **Bar Charts**: Illustrate median intensities with IQR for different tea types.
 - **Box Plots**: Show the spread and distribution of compound intensities by tea type.
 - **Histograms**: Depict the distribution of raw and log-transformed data.
